@@ -25,6 +25,13 @@ public class EstudianteTest {
         LOG.info("Iniciado test shouldAnswerWithTrue");
         assertTrue(true);
         LOG.info("Finalizando test shouldAnswerWithTrue");
-        ljyfkjffkjhf
+        
+        zdfhg
+        t
+        failf
+        g
+        df
+        gd
+        fail
     }
 }
