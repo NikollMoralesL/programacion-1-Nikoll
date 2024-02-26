@@ -8,6 +8,7 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
@@ -25,16 +26,48 @@ public class AppTest {
     public void datosCompletos() {
         LOG.info("Iniciado test datos completos");
 
-        Mascota mascota = new Mascota("viskui","mapache", "boreal", 10, "masculino", "cafe gris negro", 5.0);
+        Mascota mascota = new Mascota("viskui","mapache", "boreal", 5, "masculino", "cafe gris negro", 5.0);
 
         assertEquals("viskui" , mascota.nombre());
         assertEquals("mapache", mascota.especie());
         assertEquals("boreal", mascota.raza());
         assertEquals(10, mascota.edad());
         assertEquals("masculino", mascota.genero());
-        assertEquals("cafe gris negro", mascota.color());
+        assertEquals("cafe gris negro", mascota.colores());
         assertEquals(5.0, mascota.peso());
 
         LOG.info("Finalizando test datos completos");
+    }
+
+    @Test
+    public void datosNulos() {
+        LOG.info("Iniciado test datos nulos");
+
+        assertThrows( Throwable.class , () -> new Mascota(null, null, null, 10, null, null, 5.0));
+
+        LOG.info("Finalizando test datos ");
+
+    }
+
+
+    @Test
+    public void edadNegativa() {
+        LOG.info("Iniciado test edad negativos");
+
+        assertThrows( Throwable.class , () -> new Mascota("viskui","mapache", "boreal", -5, "masculino", "cafe gris negro", 5.0));
+
+        LOG.info("Finalizando test edad negativa");
+
+    }
+
+
+    @Test
+    public void pesoNegativo() {
+        LOG.info("Iniciado test peso negativo");
+
+        assertThrows( Throwable.class , () -> new Mascota("viskui","mapache", "boreal", 5, "masculino", "cafe gris negro", -5.0));
+
+        LOG.info("Finalizando test peso negativo");
+
     }
 }
