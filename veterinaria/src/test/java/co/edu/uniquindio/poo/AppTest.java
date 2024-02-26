@@ -1,13 +1,14 @@
 /**
  * Clase para probar el funcionamiento del código
  * @author Área de programación UQ
- * @since 2023-08
+ * @since 2024-02
  * 
  * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE) 
  */
 package co.edu.uniquindio.poo;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -21,9 +22,19 @@ public class AppTest {
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue() {
-        LOG.info("Iniciado test shouldAnswerWithTrue");
-        assertTrue(true);
-        LOG.info("Finalizando test shouldAnswerWithTrue");
+    public void datosCompletos() {
+        LOG.info("Iniciado test datos completos");
+
+        Mascota mascota = new Mascota("viskui","mapache", "boreal", 10, "masculino", "cafe gris negro", 5.0);
+
+        assertEquals("viskui" , mascota.nombre());
+        assertEquals("mapache", mascota.especie());
+        assertEquals("boreal", mascota.raza());
+        assertEquals(10, mascota.edad());
+        assertEquals("masculino", mascota.genero());
+        assertEquals("cafe gris negro", mascota.color());
+        assertEquals(5.0, mascota.peso());
+
+        LOG.info("Finalizando test datos completos");
     }
 }
