@@ -8,16 +8,24 @@ public class DetallePrestamo {
     private LocalDate fechaPrestamo;
     private LocalDate fechaDevolucion;
     private int cantidadLibros;
+    private String bibliotecarioAsignado;
     private LinkedList<Libro>libros;
 
 
-    DetallePrestamo(String nombreEstudiante, String nombreLibro, LocalDate fechaPrestamo, LocalDate fechaDevolucion, int cantidadLibros){
+
+    DetallePrestamo(String nombreEstudiante, String nombreLibro, LocalDate fechaPrestamo, LocalDate fechaDevolucion, int cantidadLibros, String bibliotecarioAsignado){
         this.nombreEstudiante = nombreEstudiante;
         this.nombreLibro=nombreLibro;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
         this.cantidadLibros=cantidadLibros;
+        this.bibliotecarioAsignado=bibliotecarioAsignado;
         libros=new LinkedList<Libro>();
+        assert nombreEstudiante != null;
+        assert nombreLibro != null;
+        assert fechaPrestamo != null;
+        assert fechaDevolucion != null;
+        assert cantidadLibros < 0;
     }
 
 
@@ -79,8 +87,21 @@ public class DetallePrestamo {
     public void setLibros(LinkedList<Libro> libros) {
         this.libros = libros;
     }
+
+
+    public String getBibliotecarioAsignado() {
+        return bibliotecarioAsignado;
+    }
+
+
+    public void setBibliotecarioAsignado(String bibliotecarioAsignado) {
+        this.bibliotecarioAsignado = bibliotecarioAsignado;
+    }
     
+
 }
+    
+
 
     
 

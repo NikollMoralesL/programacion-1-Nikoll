@@ -10,17 +10,11 @@ import org.junit.jupiter.api.Test;
 public class PersonaTest {
     private static final Logger LOG = Logger.getLogger(PersonaTest.class.getName());
 
-@Test
-public void datosVacios(){
-    LOG.info("Iniciando test datos vacios");
-    assertThrows(Throwable.class, ()-> new Estudiante("Nelson", "12345", "54321","Nc@"));
-    LOG.info("Finalizando test datos vacios");
-}
 
 @Test
 public void datosNulos(){
     LOG.info("Iniciando datos nulos");
-    assertThrows(Throwable.class, ()-> new Estudiante("Nelson", "12345", "54321","Nc@"));
+    assertThrows(Throwable.class, ()-> new Estudiante(null, null, null,null));
     LOG.info("Finalizando test datos nulos");
 }
 @Test
@@ -30,9 +24,16 @@ public void DatosIguales(){
     assertEquals("Nelson", estudiante.getNombre());
     assertEquals("12345", estudiante.getCedula());
     assertEquals("54321", estudiante.getTelefono());
-    assertEquals("Nc@", estudiante.getTelefono());
+    assertEquals("Nc@", estudiante.getCorreo());
     LOG.info("finalizando test nombre igual");
 }
-    
+
+@Test
+public void correoInvalido() {
+    LOG.info("Inicio correoInvalido");
+    assertThrows(Throwable.class,
+            () -> new Estudiante("Nelson", "12345", "54321","Nc"));
+    LOG.info("Finalización correoInvalido");
+}
 }
 

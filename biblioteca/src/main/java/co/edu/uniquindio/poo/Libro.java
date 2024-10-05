@@ -18,6 +18,13 @@ public class Libro {
         this.editorial = editorial;
         this.fecha = fecha;
         this.unidadesDisponibles = unidadesDisponibles;
+        assert codigo != null;
+        assert isbn != null;
+        assert titulo != null;
+        assert autor != null;
+        assert editorial != null;
+        assert fecha != null;
+        assert unidadesDisponibles < 0;
     }
 
     public String getCodigo() {

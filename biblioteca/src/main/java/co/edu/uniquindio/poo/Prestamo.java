@@ -7,11 +7,15 @@ public class Prestamo {
     private String nombre;
     private double valorPrestamo;
     private LinkedList<DetallePrestamo> detallePrestamos;
+    private LinkedList<Libro>libros;
 
     Prestamo(String nombre, double valorPrestamo) {
         this.nombre = nombre;
         this.valorPrestamo = valorPrestamo;
         detallePrestamos=new LinkedList<>();
+        libros=new LinkedList<Libro>();
+        assert nombre != null;
+        assert valorPrestamo < 0;
 
    
     }
@@ -47,10 +51,17 @@ public class Prestamo {
 
     
     public void agregarDetallePrestamo(DetallePrestamo detallePrestamo){
-        detallePrestamo.add(detallePrestamo);
+        detallePrestamos.add(detallePrestamo);
     }
 
 
+public LinkedList<Libro> getLibros() {
+    return libros;
+}
 
+
+public void setLibros(LinkedList<Libro> libros) {
+    this.libros = libros;
+}
     
 }

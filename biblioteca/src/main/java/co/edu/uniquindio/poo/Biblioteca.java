@@ -15,6 +15,7 @@ public class Biblioteca {
         libros=new LinkedList<>();
         estudiantes=new LinkedList<>();
         prestamos=new LinkedList<>();
+        assert nombre != null && !nombre.isBlank();
     
     }
 

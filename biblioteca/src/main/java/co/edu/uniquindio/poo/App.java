@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo;
+import java.time.LocalDate;
 
-import com.google.appengine.repackaged.org.joda.time.LocalDate;
+
 
 public class App {
     public static void main(String[] args) {
@@ -31,9 +32,9 @@ public class App {
 
         //se crean los prestamos
         Prestamo prestamo=new Prestamo("pepe", 2.000);
+ 
 
-
-        DetallePrestamo detallePrestamo1=new DetallePrestamo("mateo", "Metamorfosis", LocalDate.for(2002-01-12) , LocalDate.of(2024-12-11) , 1);
+        DetallePrestamo detallePrestamo1=new DetallePrestamo("mateo", "Metamorfosis", LocalDate.of(02,2002,1211) , LocalDate.of(2024,12,1111) , 1, "jose");
 
 
 
