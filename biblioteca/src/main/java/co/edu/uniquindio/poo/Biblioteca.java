@@ -58,6 +58,20 @@ public class Biblioteca {
         this.prestamos = prestamos;
     }
     
+    public void agregarBibliotecario(Bibliotecario bibliotecario){
+        bibliotecarios.add(bibliotecario);
+    }
     
-    
+    public void agregarEstudiante(Estudiante estudiante){
+        estudiantes.add(estudiante);
+    }
+
+    public void agregarLibro(Libro libro){
+        libros.add(libro);
+    }
+
+    public void agregarPrestamo(Prestamo prestamo){
+        prestamos.add(prestamo);
+    }
+
 }

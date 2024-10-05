@@ -80,8 +80,6 @@ public class DetallePrestamo {
         this.libros = libros;
     }
     
-    
-    
 }
 
     

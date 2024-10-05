@@ -1,13 +1,19 @@
 package co.edu.uniquindio.poo;
+import java.util.LinkedList;
+
 
 
 public class Prestamo {
     private String nombre;
     private double valorPrestamo;
+    private LinkedList<DetallePrestamo> detallePrestamos;
 
-    public Prestamo(String nombre, double valorPrestamo) {
+    Prestamo(String nombre, double valorPrestamo) {
         this.nombre = nombre;
         this.valorPrestamo = valorPrestamo;
+        detallePrestamos=new LinkedList<>();
+
+   
     }
 
 
@@ -30,6 +36,21 @@ public class Prestamo {
         this.valorPrestamo = valorPrestamo;
     }
 
-    
+    public LinkedList<DetallePrestamo> getDetallePrestamos() {
+        return detallePrestamos;
+    }
 
+
+    public void setDetallePrestamos(LinkedList<DetallePrestamo> detallePrestamos) {
+        this.detallePrestamos = detallePrestamos;
+    }
+
+    
+    public void agregarDetallePrestamo(DetallePrestamo detallePrestamo){
+        detallePrestamo.add(detallePrestamo);
+    }
+
+
+
+    
 }

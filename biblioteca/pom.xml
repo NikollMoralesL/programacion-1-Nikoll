@@ -21,6 +21,12 @@
         <version>5.10.0</version>
         <scope>test</scope>
     </dependency>
+  
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>1.9.76</version>
+    </dependency>
   </dependencies>
 
   <build>
