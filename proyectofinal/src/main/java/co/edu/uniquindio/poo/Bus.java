@@ -21,6 +21,49 @@ public class Bus extends Vehiculo{
         this.tieneABS = tieneABS;
         this.numeroEjes = numeroEjes;
         this.numeorSalidasEmergencia = numeorSalidasEmergencia;
+
+        assert !marca.isBlank();
+        assert !modelo.isBlank();
+        assert esNuevo == true || esNuevo == false;
+        assert !combustible.isBlank();
+        assert !transmision.isBlank();
+        assert numeroPasajeros >= 0;
+        assert numeroPuertas >= 0;
+        assert tieneAireAcondicionado == true || tieneAireAcondicionado == false;
+        assert tieneCamaraReversa == true || tieneCamaraReversa == false;
+        assert numeroBolsasAire >= 0;
+        assert tieneABS == true || tieneABS == false;
+        assert numeroEjes >= 0;
+
+            
+
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Bus other = (Bus) obj;
+        if (numeroPasajeros != other.numeroPasajeros)
+            return false;
+        if (numeroPuertas != other.numeroPuertas)
+            return false;
+        if (tieneAireAcondicionado != other.tieneAireAcondicionado)
+            return false;
+        if (tieneCamaraReversa != other.tieneCamaraReversa)
+            return false;
+        if (numeroBolsasAire != other.numeroBolsasAire)
+            return false;
+        if (tieneABS != other.tieneABS)
+            return false;
+        if (numeroEjes != other.numeroEjes)
+            return false;
+        if (numeorSalidasEmergencia != other.numeorSalidasEmergencia)
+            return false;
+        return true;
     }
     public int getNumeroPasajeros() {
         return numeroPasajeros;

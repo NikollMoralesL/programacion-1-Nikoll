@@ -17,7 +17,7 @@ public class Main {
     private static LinkedList<Vehiculo> vehiculosDisponibles = new LinkedList<>();
 
     public static void main(String[] args) {
-        // Crear un Administrador inicial por defecto "Joseph" con datos dummy
+        // se crea administrador
         Administrador admin = new Administrador("Joseph", "Root", "123456789", "joseph@ucarrouq.com", "admin123", "joseph", "admin123");
         empleados.add(admin);
         
@@ -25,19 +25,25 @@ public class Main {
         Empleado empleado1 = new Empleado("Juan", "Perez", "12345678", "juan.perez@ucarrouq.com", "123456", "juan123", "123");
         empleados.add(empleado1);
 
-        // Crear vehículos de ejemplo
+        // se crean  vehiculos
         Vehiculo moto = new Moto("Yamaha", "YZF-R3", true, "Gasolina", "Manual", 321, 180, 6);
         Vehiculo sedan = new Sedan("Toyota", "Corolla", true, "Gasolina", "Automático", 5, 4, true, true, false, 6, true, true, true, true);
+        Vehiculo bus = new Bus("Mercedes", "Sprinter", true, "Diesel", "Manual", 20, 2, true, true, 4, true, 2, 4);
+        Vehiculo camioneta=new Camioneta("mazda", "2023", true, "gasolina", "manual", 5, 4, true, false, true, 3, false, true);
+       
+        
         vehiculosDisponibles.add(moto);
         vehiculosDisponibles.add(sedan);
+        vehiculosDisponibles.add(bus);
+        vehiculosDisponibles.add(camioneta);
 
-        // Crear scanner para leer entradas de consola
+
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
         
-        for (;;) {  // Bucle for que se ejecuta indefinidamente
+        for (;;) { 
             if (salir) {
-                break;  // Salir del bucle si la variable salir es true
+                break;  
             }
         
             System.out.println("\nBienvenido al sistema 'Tu Carro UQ'!");
@@ -47,7 +53,7 @@ public class Main {
             System.out.println("4. Salir");
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Limpiar el buffer
+            scanner.nextLine(); 
         
             if (opcion == 1) {
                 iniciarSesionAdministrador(scanner);
@@ -71,11 +77,11 @@ public class Main {
         System.out.print("Ingrese el nombre de usuario del administrador: ");
         String usuario = scanner.nextLine();
         System.out.print("Ingrese la contraseña: ");
-        String contrasena = scanner.nextLine();
+        String contraseña = scanner.nextLine();
     
         // Verificar si las credenciales son correctas
         for (Empleado emp : empleados) {
-            if (emp instanceof Administrador && emp.getUsuario().equals(usuario) && emp.getContrasena().equals(contrasena)) {
+            if (emp instanceof Administrador && emp.getUsuario().equals(usuario) && emp.getContraseña().equals(contraseña)) {
                 mostrarMenuAdministrador(scanner, (Administrador) emp);
                 return;
             }
@@ -88,11 +94,11 @@ public class Main {
         System.out.print("Ingrese el nombre de usuario del empleado: ");
         String usuario = scanner.nextLine();
         System.out.print("Ingrese la contraseña: ");
-        String contrasena = scanner.nextLine();
+        String contraseña = scanner.nextLine();
 
         // Verificar si las credenciales son correctas
         for (Empleado emp : empleados) {
-            if (emp instanceof Empleado && emp.getUsuario().equals(usuario) && emp.getContrasena().equals(contrasena)) {
+            if (emp instanceof Empleado && emp.getUsuario().equals(usuario) && emp.getContraseña().equals(contraseña)) {
                 mostrarMenuEmpleado(scanner, (Empleado) emp);
                 return;
             }
@@ -243,9 +249,9 @@ public class Main {
         System.out.print("Ingrese usuario del empleado: ");
         String usuario = scanner.nextLine();
         System.out.print("Ingrese contraseña del empleado: ");
-        String contrasena = scanner.nextLine();
+        String contraseña = scanner.nextLine();
 
-        Empleado nuevoEmpleado = new Empleado(nombre, apellido, dni, email, telefono, usuario, contrasena);
+        Empleado nuevoEmpleado = new Empleado(nombre, apellido, dni, email, telefono, usuario, contraseña);
         empleados.add(nuevoEmpleado);
         System.out.println("Empleado registrado exitosamente.");
     }

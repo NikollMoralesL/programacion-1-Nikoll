@@ -3,17 +3,18 @@ import java.util.LinkedList;
 
 public class Empleado extends Persona {
     private String usuario;
-    private String contrasena;
+    private String contraseña;
     LinkedList<Transaccion> transacciones;
 
 
 
 
     public Empleado(String nombre, String apellido, String dni, String email, String telefono, String usuario,
-            String contrasena) {
+            String contraseña) {
         super(nombre, apellido, dni, email, telefono);
         this.usuario = usuario;
-        this.contrasena = contrasena;
+        this.contraseña = contraseña;
+        assert email.contains("@");
     }
 
     public String getUsuario() {
@@ -24,12 +25,12 @@ public class Empleado extends Persona {
         this.usuario = usuario;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public LinkedList<Transaccion> getTransacciones() {

@@ -15,6 +15,15 @@ public class Camion {
         this.tieneABS = tieneABS;
         this.numeroEjes = numeroEjes;
         this.tipoCamion = tipoCamion;
+
+        assert capacidadCarga >= 0;
+        assert tieneAireAcondicionado == true || tieneAireAcondicionado == false;
+        assert tieneFrenosAire == true || tieneFrenosAire == false;
+        assert tieneABS == true || tieneABS == false;
+        assert numeroEjes >= 0;
+        assert !tipoCamion.isBlank();
+        
+
     }
     public double getCapacidadCarga() {
         return capacidadCarga;
